@@ -10,11 +10,11 @@ import urllib
 import datetime
 
 """ USER CONFIG """
-r = praw.Reddit(user_agent='ModAppTool by /u/x_minus_one', client_id='CLIENT ID', client_secret='CLIENT SECRET', username='NTOModApps', password='PASSWORD')
+r = praw.Reddit(user_agent='ModAppTool by /u/x_minus_one', client_id='client ID', client_secret='client secret', username='username', password='password')
 FORWARD_FROM = "NTOModApps"
 USERAGENT = 'ModAppTool by /u/x_minus_one'
 
-FORWARD_TO = ["THREAD ID"]
+FORWARD_TO = ["thread_id"]
 # This is the thread id you want it to post to
 
 FORWARD_SUBJECT = "_sender_: _subject_"
@@ -57,9 +57,6 @@ cur = sql.cursor()
 cur.execute('CREATE TABLE IF NOT EXISTS unsent(id TEXT, subject TEXT, body TEXT)')
 
 print('Logging in...')
-#r = praw.Reddit(USERAGENT)
-#r.login(FORWARD_FROM, PASSWORD, disable_warning = True)
-
 
 def prepareforwards():
 	print('Checking unread messages...')
@@ -169,4 +166,3 @@ while True:
 		traceback.print_exc()
 	print('Sleeping %d seconds\n' % WAIT)
 	time.sleep(WAIT)
-
